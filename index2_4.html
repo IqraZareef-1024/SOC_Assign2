@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+ <link rel="stylesheet" href="style_3.css">
+</head>
+<body>
+
+<h1>Data Table Filtering without JQuery</h1>
+<input id="myInput" type="text" placeholder="Search..">
+<br></br>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>Year</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td>John</td>
+    <td>18001</td>
+    <td>Y18</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td>17002</td>
+    <td>Y17</td>
+  </tr>
+  <tr>
+    <td>July</td>
+    <td>16003</td>
+    <td>Y16</td>
+  </tr>
+  <tr>
+    <td>Anja</td>
+    <td>15004</td>
+    <td>Y15</td>
+  </tr>
+  </tbody>
+</table>
+  
+
+</body>
+</html>
