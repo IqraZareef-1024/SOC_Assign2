@@ -1,0 +1,45 @@
+<!DOCTYPE html>  
+ <html>  
+      <head>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+           
+      </head>  
+      <body>  <h1>SoC data table</h1>
+           <div class="container" style="width:900px;"> 
+                
+           </div> 
+           
+        <script>
+                function makeTable(container, data) {
+                    var table = $("<table/>").addClass('mytable');
+                    $.each(data, function(rowIndex, r) {
+                        if(rowIndex==0){
+                        var row = $("<tr/>").addClass('td');
+                        $.each(r, function(colIndex, c) { 
+                            row.append($("<th/>").addClass('th').text(c));
+                        });
+                    }else{
+                        var row = $("<tr/>").addClass('td');
+                        $.each(r, function(colIndex, c) { 
+                            row.append($("<td/>").addClass('td').text(c));
+                        });
+                    }
+                        table.append(row);
+                    });
+                    return container.append(table);
+                }
+            
+            $(document).ready(function() {
+                var data
+                    =[["Name","Roll No","year"],
+                        ["John "," 18001 "," Y18"],
+                        ["Mary "," 17002 "," Y17"],
+                        ["July "," 16003 "," Y16"],
+                        ["Anja "," 15004 "," Y15"]]
+                var Table = makeTable($(document.body), data);
+          });
+        </script>
+ 
+      </body>  
+ </html>
+     
